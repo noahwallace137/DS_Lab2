@@ -211,7 +211,7 @@ class MeetingCalendarTest
 		cal.addMeeting(A);
 		cal.addMeeting(B);
 		cal.addMeeting(C);
-		
+		 
 		cal.removeMeeting(A);
 		assertNull(cal.findMeeting(startA));
 		assertEquals(B,cal.findMeeting(endA));

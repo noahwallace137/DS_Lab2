@@ -13,7 +13,7 @@ public class OneTimeEvent extends CalendarEvent
 	}
 	public OneTimeEvent(String description, String location, GregorianCalendar startTime, GregorianCalendar endTime)
 	{
-		super(location, location, endTime, endTime);
+		super(description, location, startTime, endTime);
 
 	}
 
