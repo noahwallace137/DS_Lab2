@@ -161,5 +161,29 @@ class CalendarEventTest
 		checkMeeting("X", "Olin", startTime, endTime);
 
 	}
+	
+	@Test
+	void tesMultiDayPerWeekEventDisplaces()
+	{
+		GregorianCalendar startTime = new GregorianCalendar(2023,8,4,8,30);
+		GregorianCalendar endTime = new GregorianCalendar(2023,8,4,9,30);		
+		OneTimeEvent X = new OneTimeEvent("X", "Olin", startTime, endTime);
+		X.scheduleEvent(cal);
+		
+		GregorianCalendar startTimeMulti = new GregorianCalendar(2023,8,4,8,30);
+		GregorianCalendar endTimeMulti = new GregorianCalendar(2023,8,4,9,30);
+		GregorianCalendar repeatUntil = new GregorianCalendar(2023,8,10,8,30);	
+		
+		
+		int[] days = {GregorianCalendar.MONDAY, GregorianCalendar.WEDNESDAY, GregorianCalendar.FRIDAY} ;
+		
+		
+		MultiDayPerWeekEvent G = new MultiDayPerWeekEvent("G", "Grant", startTimeMulti, endTimeMulti, repeatUntil, days);
+		G.scheduleEvent(cal);
+		
+		checkMeeting("X", "Olin", startTime, endTime);
+
+		
+	}
 
 }
